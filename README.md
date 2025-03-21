@@ -79,11 +79,57 @@ Web Serial API를 통해 시리얼 포트로 명령 전송
 ---
 
 ## 📦 설치 방법
+### 🛠️ 설치 및 실행 방법
+✅ 1. Python 환경 구성
+Python 3.8 이상이 설치되어 있어야 해.
+가상환경을 사용하는 걸 추천해!
 
-```bash
+bash
+복사
+편집
+python -m venv venv
+source venv/bin/activate     # macOS/Linux
+venv\Scripts\activate        # Windows
+### 📦 2. 필요한 패키지 설치
+bash
+복사
+편집
+pip install -r requirements.txt
+requirements.txt 없으면 아래처럼 직접 설치해도 돼:
+
+bash
+복사
+편집
 pip install ultralytics opencv-python roslibpy requests numpy
-🧑‍💻 담당자: 바회
-본 모듈은 바회가 개발한 게이트 제어 및 위험 감지 시스템이며, 통합 스마트 아파트 관리 시스템의 핵심적인 보안 역할을 담당합니다.
-실시간 객체 감지 → 제어 신호 전송 흐름을 구현하여 지능형 출입 관리와 위험 대응을 실현했습니다.
+### 🎥 3. 카메라 연결 확인
+USB 웹캠 또는 Jetbot 스트리밍(예: http://<ip>:8080/stream) 준비
+장치가 카메라로 인식되는지 확인
+### 🔌 4. 아두이노 연결
+시리얼 방식 (crossing_gate.py):
+
+Arduino 연결 후 포트 확인 (예: COM3, /dev/ttyUSB0)
+HTTP 방식 (machine_gate.py):
+
+Arduino가 웹서버로 동작해야 하고, IP 주소 확인 필요 (예: 192.168.137.134)
+### 🚦 5. 파일 실행 방법
+흉기 감지 및 경보 시스템 실행
+
+bash
+복사
+편집
+python machine_police.py
+시리얼 게이트 제어 시스템 실행
+
+bash
+복사
+편집
+python crossing_gate.py
+무선 게이트 제어 시스템 실행
+
+bash
+복사
+편집
+python machine_gate.py
+실행 중 q 키를 누르면 카메라 창이 닫혀.
 
 📢 전체 시스템은 ROS 기반의 자율 순찰, 택배 운송, 실시간 웹페이지 모니터링으로 확장되며, 본 레포는 그 중 보안 시스템의 핵심 처리 로직을 담당합니다.
