@@ -81,25 +81,19 @@ Web Serial API를 통해 시리얼 포트로 명령 전송
 ## 📦 설치 방법
 ###  설치 및 실행 방법
 ✅ 1. Python 환경 구성
-Python 3.8 이상이 설치되어 있어야 해.
-가상환경을 사용하는 걸 추천해!
+Python 3.8 이상이 설치되어 있어야 합니다.
+가상환경을 사용하는 걸 추천합니다!
 
-bash
-복사
-편집
+
 python -m venv venv
 source venv/bin/activate     # macOS/Linux
 venv\Scripts\activate        # Windows
 ###  2. 필요한 패키지 설치
-bash
-복사
-편집
-pip install -r requirements.txt
-requirements.txt 없으면 아래처럼 직접 설치해도 돼:
 
-bash
-복사
-편집
+pip install -r requirements.txt
+requirements.txt 없으면 아래처럼 직접 설치해도 됩니다:
+
+
 pip install ultralytics opencv-python roslibpy requests numpy
 ###  3. 카메라 연결 확인
 USB 웹캠 또는 Jetbot 스트리밍(예: http://<ip>:8080/stream) 준비
@@ -114,22 +108,16 @@ Arduino가 웹서버로 동작해야 하고, IP 주소 확인 필요 (예: 192.1
 ###  5. 파일 실행 방법
 흉기 감지 및 경보 시스템 실행
 
-bash
-복사
-편집
+
 python machine_police.py
 시리얼 게이트 제어 시스템 실행
 
-bash
-복사
-편집
+
 python crossing_gate.py
 무선 게이트 제어 시스템 실행
 
-bash
-복사
-편집
+
 python machine_gate.py
-실행 중 q 키를 누르면 카메라 창이 닫혀.
+실행 중 q 키를 누르면 카메라 창이 닫힙니다.
 
 📢 전체 시스템은 ROS 기반의 자율 순찰, 택배 운송, 실시간 웹페이지 모니터링으로 확장되며, 본 레포는 그 중 보안 시스템의 핵심 처리 로직을 담당합니다.
